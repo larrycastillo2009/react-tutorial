@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .person{
+            display: inline-block;
+            margin: 10px;
+            border: 1px solid #eee;
+            box-shadow: 0 2px 2px #ccc;
+            width: 200px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="p1"></div>
+<div class="person">
+    <h1>Max</h1>
+    <p>Your Age: 28</p>
+</div>
+<script>
+function Person(){
+    return (
+        <div className="person">
+            <h1>Larry</h1>
+            <p>Your Age: 29</p>
+        </div>
+    );
+}
+ReactDOM.render(<Person/>,document.querySelector('#p1'));
+</script>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+</body>
+</html>
