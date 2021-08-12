@@ -5,18 +5,50 @@ import App from './App';
 import Table from './Table'
 import * as serviceWorker from './serviceWorker';
 
-class App1 extends React.Component{
-    render(){
-        return(
-            <div className={App1}>
+
+class App1 extends React.Component {
+    state = {
+        characters: [
+            {
+                name: 'Charlie',
+                job: 'Janitor'
+            },
+            {
+                name: 'Mac',
+                job: 'Bouncer',
+            },
+            {
+                name: 'Dee',
+                job: 'Aspiring actress',
+            },
+            {
+                name: 'Dennis',
+                job: 'Bartender',
+            },
+        ],
+    }
+
+    removeCharacter = (index) => {
+        const {characters} = this.state
+
+        this.setState({
+            characters: characters.filter((character, i) => {
+                return i !== index
+            }),
+        })
+    }
+
+    render() {
+        return (
+            <div className="container">
                 <h1>Hello, React!</h1>
-                <Table/>
+                <Table characterData={this.state.characters} removeCharacter={this.removeCharacter}/>
             </div>
         )
     }
 }
 
-ReactDOM.render(<App1 />, document.getElementById('root'))
+ReactDOM.render(<App1/>, document.getElementById('root'))
 
 // ReactDOM.render(
 //   <React.StrictMode>
