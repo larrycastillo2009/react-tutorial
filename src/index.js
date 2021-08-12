@@ -3,29 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Table from './Table'
+import Form from './Form'
 import * as serviceWorker from './serviceWorker';
 
 
 class App1 extends React.Component {
     state = {
-        characters: [
-            {
-                name: 'Charlie',
-                job: 'Janitor'
-            },
-            {
-                name: 'Mac',
-                job: 'Bouncer',
-            },
-            {
-                name: 'Dee',
-                job: 'Aspiring actress',
-            },
-            {
-                name: 'Dennis',
-                job: 'Bartender',
-            },
-        ],
+        characters: [],
     }
 
     removeCharacter = (index) => {
@@ -41,8 +25,8 @@ class App1 extends React.Component {
     render() {
         return (
             <div className="container">
-                <h1>Hello, React!</h1>
                 <Table characterData={this.state.characters} removeCharacter={this.removeCharacter}/>
+                <Form />
             </div>
         )
     }
