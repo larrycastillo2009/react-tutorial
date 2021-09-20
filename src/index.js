@@ -22,11 +22,17 @@ class App1 extends React.Component {
         })
     }
 
+    handleSubmit = (character) => {
+        this.setState({characters: [...this.state.characters, character]})
+    }
+
     render() {
+        const{ characters } = this.state
         return (
             <div className="container">
-                <Table characterData={this.state.characters} removeCharacter={this.removeCharacter}/>
-                <Form />
+                <Table characterData={characters}
+                       removeCharacter={this.removeCharacter}/>
+                <Form handleSubmit={this.handleSubmit} />
             </div>
         )
     }
